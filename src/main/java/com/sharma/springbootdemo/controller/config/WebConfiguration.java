@@ -1,5 +1,6 @@
 package com.sharma.springbootdemo.controller.config;
 
+import com.sharma.springbootdemo.controller.intercepter.MandatoryParameterInterceptor;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
