@@ -6,12 +6,13 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.sharma.springbootdemo.controller.handler.DeserializationProblemHandler;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 /**
  * author anand.
  * since on 29/12/17.
  */
-@Configurable
+@Configuration
 public class BeanConfiguration  {
     @Bean
     DeserializationProblemHandler deserializationProblemHandler() {

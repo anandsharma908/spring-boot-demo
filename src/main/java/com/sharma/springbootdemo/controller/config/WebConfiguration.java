@@ -2,6 +2,7 @@ package com.sharma.springbootdemo.controller.config;
 
 import com.sharma.springbootdemo.controller.intercepter.MandatoryParameterInterceptor;
 import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
@@ -11,7 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * author anand.
  * since on 29/12/17.
  */
-@Configurable
+@Configuration
 public class WebConfiguration extends WebMvcConfigurerAdapter {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {

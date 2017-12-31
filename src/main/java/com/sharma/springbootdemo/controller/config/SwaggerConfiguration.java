@@ -2,6 +2,7 @@ package com.sharma.springbootdemo.controller.config;
 
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.async.DeferredResult;
@@ -19,7 +20,7 @@ import java.util.Arrays;
  * author anand.
  * since on 29/12/17.
  */
-@Configurable
+@Configuration
 @EnableSwagger2
 public class SwaggerConfiguration {
     @Bean
