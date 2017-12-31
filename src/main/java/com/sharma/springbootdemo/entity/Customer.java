@@ -15,14 +15,22 @@ import javax.persistence.Id;
 @Builder
 @Entity(name = "Customer")
 public class Customer {
+    public Customer(String id, String customerName, String customerAddress, Long salary, String phoneNumber) {
+        this.id = id;
+        this.customerName = customerName;
+        this.customerAddress = customerAddress;
+        this.salary = salary;
+        this.phoneNumber = phoneNumber;
+    }
+
     @Id
-    private String id;
+    public String id;
     @Column(name = "customerName")
-    private String customerName;
+    public String customerName;
     @Column(name = "customerAddress")
-    private String customerAddress;
+    public String customerAddress;
     @Column(name = "salary")
-    private Long salary;
+    public Long salary;
     @Column(name = "phoneNumber")
-    private String phoneNumber;
+    public String phoneNumber;
 }
