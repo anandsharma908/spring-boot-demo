@@ -2,6 +2,7 @@ package com.sharma.springbootdemo.controller.intercepter;
 
 import com.sharma.springbootdemo.restwebmodel.ErrorCode;
 import com.sharma.springbootdemo.restwebmodel.MandatoryParameter;
+import com.sharma.springbootdemo.restwebmodel.MandatoryParameterBuilder;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
@@ -27,14 +28,12 @@ public class MandatoryParameterInterceptor extends HandlerInterceptorAdapter {
      * @return mandatory parameter
      */
     protected MandatoryParameter validateAndGetMandatoryParameter(HttpServletRequest request) {
-        String CHANNEL_ID = request.getHeader("channelId");
-
+        String STORE_ID = request.getHeader("storeId");
         String USER_NAME = request.getHeader("username");
 
-        checkArgument(StringUtils.isNotBlank(CHANNEL_ID),
-                ErrorCode.CHANNEL_ID_MUST_NOT_BE_BLANK_OR_NULL);
-
-        return new MandatoryParameterBuilder().withChannelId(CHANNEL_ID)
+        checkArgument(StringUtils.isNotBlank(STORE_ID),
+                ErrorCode.STORE_ID_MUST_NOT_BE_BLANK_OR_NULL);
+        return new MandatoryParameterBuilder().withStoreId(STORE_ID)
                 .withUsername(USER_NAME).build();
     }
 
