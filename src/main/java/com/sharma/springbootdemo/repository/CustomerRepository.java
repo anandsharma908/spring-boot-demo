@@ -8,4 +8,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * since on 31/12/17.
  */
 public interface CustomerRepository extends JpaRepository<Customer, String> {
+    Customer findByCustomerName(String customerName);
 }

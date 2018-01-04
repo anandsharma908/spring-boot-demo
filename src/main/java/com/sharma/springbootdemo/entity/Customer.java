@@ -1,11 +1,12 @@
 package com.sharma.springbootdemo.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * author anand.
@@ -14,23 +15,19 @@ import javax.persistence.Id;
 @Data
 @Builder
 @Entity(name = "Customer")
+@NoArgsConstructor
+@AllArgsConstructor
 public class Customer {
-    public Customer(String id, String customerName, String customerAddress, Long salary, String phoneNumber) {
-        this.id = id;
-        this.customerName = customerName;
-        this.customerAddress = customerAddress;
-        this.salary = salary;
-        this.phoneNumber = phoneNumber;
-    }
 
     @Id
-    public String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String id;
     @Column(name = "customerName")
-    public String customerName;
+    private String customerName;
     @Column(name = "customerAddress")
-    public String customerAddress;
+    private String customerAddress;
     @Column(name = "salary")
-    public Long salary;
+    private String salary;
     @Column(name = "phoneNumber")
-    public String phoneNumber;
+    private String phoneNumber;
 }
